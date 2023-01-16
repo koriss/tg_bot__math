@@ -8,5 +8,5 @@ interface Math
 {
     public function get(): string;
 
-    public function check(): bool;
+    public function check(int $answer): bool;
 }
