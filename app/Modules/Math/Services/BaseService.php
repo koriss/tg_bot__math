@@ -13,7 +13,7 @@ class BaseService
     protected int $answer;
     protected string $operator;
     protected array $operators = [
-        '-' => 'getMinus',
+        '-' => '',
         '+' => 'getPlus',
         '*',
         '/',
