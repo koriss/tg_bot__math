@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Modules\Math;
+namespace App\Modules\Tg;
 
 use App\Modules\Math\Contracts\ContentCabinetData;
-use App\Modules\Math\Services\TgService;
+use App\Modules\Math\Services\MathService;
 use Illuminate\Support\ServiceProvider;
 
 class TgServiceProvider extends ServiceProvider
@@ -12,7 +12,7 @@ class TgServiceProvider extends ServiceProvider
     {
         $this->app->singleton(
             Tg::class,
-            TgService::class
+            MathService::class
         );
     }
 }

@@ -4,10 +4,12 @@
 namespace App\Modules\Math\Services;
 
 
+use App\Modules\Math\Contracts\Math;
+
 /**
  *
  */
-class TgService implements \App\Modules\Math\Contracts\Tg
+class MathService extends BaseService implements Math
 {
     /**
      * @var array|string[]
@@ -113,7 +115,6 @@ class TgService implements \App\Modules\Math\Contracts\Tg
             'answer' => $answer,
         ];
     }
-
     public function get(): array
     {
         $this->getOperator();

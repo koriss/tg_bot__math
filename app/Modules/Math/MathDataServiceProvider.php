@@ -2,8 +2,8 @@
 
 namespace App\Modules\Math;
 
-use App\Modules\Math\Contracts\ContentCabinetData;
-use App\Modules\Math\Services\TgService;
+use App\Modules\Math\Contracts\Math;
+use App\Modules\Math\Services\MathService;
 use Illuminate\Support\ServiceProvider;
 
 class MathDataServiceProvider extends ServiceProvider
@@ -11,8 +11,8 @@ class MathDataServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->app->singleton(
-            ContentCabinetData::class,
-            TgService::class
+            Math::class,
+            MathService::class
         );
     }
 }

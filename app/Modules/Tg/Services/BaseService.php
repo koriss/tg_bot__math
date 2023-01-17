@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Modules\Math\Services;
+namespace App\Modules\Tg\Services;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;

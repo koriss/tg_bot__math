@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('maths', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->integer('tg_user_id')->index();
+            $table->string('data');
+            $table->string('answer');
         });
     }
 

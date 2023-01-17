@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Modules\Math\Contracts;
+namespace App\Modules\Tg\Contracts;
 
 
 interface Tg
