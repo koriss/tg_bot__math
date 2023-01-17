@@ -7,7 +7,7 @@ namespace App\Modules\Math\Services;
 /**
  *
  */
-class MathService implements \App\Modules\Math\Contracts\Math
+class TgService implements \App\Modules\Math\Contracts\Tg
 {
     /**
      * @var array|string[]

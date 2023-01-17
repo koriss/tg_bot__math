@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Modules\Math\Services\BaseService;
-use App\Modules\Math\Services\MathService;
+use App\Modules\Math\Services\TgService;
 use Illuminate\Console\Command;
 
 class MathCommand extends Command
@@ -29,7 +29,7 @@ class MathCommand extends Command
      */
     public function handle()
     {
-        $service = new MathService();
+        $service = new TgService();
 
         echo PHP_EOL;
         echo PHP_EOL;
