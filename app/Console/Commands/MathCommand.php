@@ -4,8 +4,8 @@ namespace App\Console\Commands;
 
 use App\Modules\Math\Services\BaseService;
 use App\Modules\Math\Services\MathService;
-use DefStudio\Telegraph\Models\TelegraphBot;
 use Illuminate\Console\Command;
+use Telegram\Bot\Laravel\Facades\Telegram;
 
 class MathCommand extends Command
 {
@@ -23,6 +23,14 @@ class MathCommand extends Command
      */
     protected $description = 'Command description';
 
+    protected $telegram;
+
+    public function __construct(Telegram $telegram)
+    {
+        parent::__construct();
+        // $this->telegram = new Telegram();
+    }
+
     /**
      * Execute the console command.
      *
@@ -39,9 +47,14 @@ class MathCommand extends Command
 
         echo PHP_EOL;
 
+        $params = [
+            'chat_id' => env('TG_CHATID'),
+            'text' => 'asd',
+        ];
 
-        
-
+        $response = Telegram::bot('math')->sendMessage($params);
+        dump($response);
+        // dump($this->telegram->bot('math')->getMe());
     }
 
 }
