@@ -14,14 +14,16 @@ class MathCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'math:command';
+    protected $signature = 'math:send 
+                            {--chat_id= : Enter your chat telegram chat id for send test message}
+                            ';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Send math to default chat id or for custom, just write digits afte';
 
     protected $telegram;
 
@@ -38,22 +40,31 @@ class MathCommand extends Command
      */
     public function handle()
     {
+            
         $service = new MathService();
-
-        echo PHP_EOL;
-        echo PHP_EOL;
-
-        dump($service->get());
-
-        echo PHP_EOL;
-
+        $chat_id = $this->option('chat_id') ?? env('TG_CHATID');
+        $text = 'Нужно найти ответ и написать:'
+                .PHP_EOL.$service->get()['math'].' = ?'
+                .PHP_EOL.PHP_EOL.PHP_EOL.time().PHP_EOL
+                ;
         $params = [
-            'chat_id' => env('TG_CHATID'),
-            'text' => 'asd',
+            'chat_id' => $chat_id,
+            'text' => $text,
         ];
 
+        echo PHP_EOL;
+        // dump($response);
+        echo PHP_EOL;
+
+        dump($params);
+    
+        echo PHP_EOL;
+        echo PHP_EOL;
+        
         $response = Telegram::bot('math')->sendMessage($params);
         dump($response);
+
+        
         // dump($this->telegram->bot('math')->getMe());
     }
 
