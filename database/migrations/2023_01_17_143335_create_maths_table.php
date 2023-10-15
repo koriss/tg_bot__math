@@ -15,10 +15,14 @@ return new class extends Migration
     {
         Schema::create('maths', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-            $table->integer('tg_user_id')->index();
+            $table->ulid();
+            $table->foreignId('students_chat_id')->constrained('students_chats')->cascadeOnDelete();
             $table->string('data');
             $table->string('answer');
+            $table->jsonb('wrong_answers');
+            $table->integer('try');
+            $table->timestamps();
+            $table->softDeletes();      
         });
     }
 

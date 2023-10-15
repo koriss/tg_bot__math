@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('stundets_chats', function (Blueprint $table) {
             $table->id();
+            $table->ulid();
+            $table->foreignId('students_id')->constrained('students')->cascadeOnDelete();
+            $table->jsonb('settings');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

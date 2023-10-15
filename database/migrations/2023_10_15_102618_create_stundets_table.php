@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('stundets', function (Blueprint $table) {
             $table->id();
+            $table->ulid();
+            $table->jsonb('settings');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
