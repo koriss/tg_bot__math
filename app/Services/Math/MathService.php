@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Modules\Math\Services;
+namespace App\Services\Math;
 
 
-use App\Modules\Math\Contracts\Math;
+use App\Contracts\Math\Math;
 
 /**
  *

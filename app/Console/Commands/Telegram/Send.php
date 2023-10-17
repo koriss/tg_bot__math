@@ -2,8 +2,6 @@
 
 namespace App\Console\Commands\Telegram;
 
-use App\Services\Math\BaseService;
-use App\Services\Math\MathService;
 use Illuminate\Console\Command;
 use Telegram\Bot\Laravel\Facades\Telegram;
 
@@ -14,7 +12,7 @@ class Send extends Command
      *
      * @var string
      */
-    protected $signature = 'math:send 
+    protected $signature = 'telegram:send 
                             {--chat_id= : Enter your chat telegram chat id for send test message}
                             ';
 
@@ -27,10 +25,9 @@ class Send extends Command
 
     protected $telegram;
 
-    public function __construct(Telegram $telegram)
+    public function __construct()
     {
         parent::__construct();
-        // $this->telegram = new Telegram();
     }
 
     /**
@@ -41,7 +38,7 @@ class Send extends Command
     public function handle()
     {
             
-        $service = new MathService();
+        $service = new \App\Services\Math\MathService();
         $chat_id = $this->option('chat_id') ?? env('TG_CHATID');
         $text = 'Нужно найти ответ и написать:'
                 .PHP_EOL.$service->get()['math'].' = ?'
@@ -66,6 +63,8 @@ class Send extends Command
 
         
         // dump($this->telegram->bot('math')->getMe());
+
+        return true;
     }
 
 }

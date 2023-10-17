@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Modules\Tg\Contracts;
+namespace App\Contracts\Chat;
 
 
-interface Tg
+interface Chat
 {
     public function get(): array;
 

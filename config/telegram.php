@@ -1,7 +1,4 @@
 <?php
-
-use Telegram\Bot\Commands\HelpCommand;
-
 return [
     /*
     |--------------------------------------------------------------------------
@@ -37,6 +34,8 @@ return [
             // 'webhook_url' => env('TELEGRAM_WEBHOOK_URL', 'YOUR-BOT-WEBHOOK-URL'),
             'commands' => [
                 //Acme\Project\Commands\MyTelegramBot\BotCommand::class
+                \App\Services\Chats\Telegram\Commands\HelpCommand::class,
+            
             ],
         ],
 
@@ -126,7 +125,7 @@ return [
     |
     */
     'commands' => [
-        HelpCommand::class,
+        // HelpCommand::class,
     ],
 
     /*

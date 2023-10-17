@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Modules\Math\Contracts;
+namespace App\Contracts\Math;
 
 
 interface Math

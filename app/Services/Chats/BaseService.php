@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Modules\Tg\Services;
+namespace App\Services\Chats;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;

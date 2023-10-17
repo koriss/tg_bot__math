@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::name('api.')->group(function ()  {
     Route::post('/'.config('telegram.bots.math.token').'/webhook', function () {
         $updates = \Telegram\Bot\Laravel\Facades\Telegram::getWebhookUpdate();
-
+        \Illuminate\Support\Facades\Log::info($updates);
         return 'ok';
     })->name('telegram');
 });

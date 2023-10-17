@@ -2,8 +2,8 @@
 
 namespace App\Modules\Math;
 
-use App\Modules\Math\Contracts\Math;
-use App\Modules\Math\Services\MathService;
+use App\Contracts\Math\Math;
+use App\Services\Math\MathService;
 use Illuminate\Support\ServiceProvider;
 
 class MathDataServiceProvider extends ServiceProvider
