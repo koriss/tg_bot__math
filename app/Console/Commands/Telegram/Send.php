@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Console\Commands\Math;
+namespace App\Console\Commands\Telegram;
 
-use App\Modules\Math\Services\BaseService;
-use App\Modules\Math\Services\MathService;
+use App\Services\Math\BaseService;
+use App\Services\Math\MathService;
 use Illuminate\Console\Command;
 use Telegram\Bot\Laravel\Facades\Telegram;
 
-class SendCommand extends Command
+class Send extends Command
 {
     /**
      * The name and signature of the console command.

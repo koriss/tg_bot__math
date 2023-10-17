@@ -19,7 +19,7 @@ class SetWebhook extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Set telegram webhook from route api.telegram';
 
     /**
      * Execute the console command.
