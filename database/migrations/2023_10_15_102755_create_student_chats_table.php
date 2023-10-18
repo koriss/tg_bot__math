@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('stundets_chats', function (Blueprint $table) {
+        Schema::create('student_chats', function (Blueprint $table) {
             $table->id();
             $table->ulid();
             $table->string('chat')->index(); // TG, VK, FB & etc
-            $table->foreignId('students_id')->constrained('students')->cascadeOnDelete();
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('students');
             $table->jsonb('settings');
             $table->timestamps();
             $table->softDeletes();
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('stundets_chats');
+        Schema::dropIfExists('student_chats');
     }
 };

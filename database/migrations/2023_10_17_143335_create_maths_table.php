@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('maths', function (Blueprint $table) {
             $table->id();
             $table->ulid();
-            $table->foreignId('students_chat_id')->constrained('students_chats')->cascadeOnDelete();
+            $table->unsignedBigInteger('student_chat_id');
+            $table->foreign('student_chat_id')->references('id')->on('student_chats');
             $table->string('data');
             $table->string('answer');
+            $table->integer('status')->default(0); // 0 open 1 solved 2 skip
             $table->jsonb('wrong_answers');
             $table->integer('try');
             $table->timestamps();
