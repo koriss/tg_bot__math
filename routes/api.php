@@ -17,10 +17,19 @@ use Illuminate\Support\Facades\Route;
 //Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
+
+// Route::name('api.')->group(function ()  {
+//     Route::post('/'.config('telegram.bots.math.token').'/webhook', function () {
+//         $updates = \Telegram\Bot\Laravel\Facades\Telegram::getWebhookUpdate();
+//         \Illuminate\Support\Facades\Log::info($updates);
+//         return 'ok';
+//     })->name('telegram');
+// });
+
 Route::name('api.')->group(function ()  {
-    Route::post('/'.config('telegram.bots.math.token').'/webhook', function () {
-        $updates = \Telegram\Bot\Laravel\Facades\Telegram::getWebhookUpdate();
-        \Illuminate\Support\Facades\Log::info($updates);
-        return 'ok';
-    })->name('telegram');
+    Route::post(
+        '/'.config('telegram.bots.math.token').'/webhook', [
+        \App\Http\Controllers\Api\TelegramController::class, 
+        'handle'
+        ])->name('telegram');    
 });

@@ -15,14 +15,14 @@ final class StartCommand extends Command
     protected string $name = 'start';
 
     /**
-     * @var array Command Aliases
+     * @var array Command Aliase
      */
-    protected array $aliases = ['listcommands'];
+    protected array $aliases = ['helloworld'];
 
     /**
      * @var string Command Description
      */
-    protected string $description = 'Get a list of available commands';
+    protected string $description = 'hello world command';
 
     /**
      * {@inheritdoc}
