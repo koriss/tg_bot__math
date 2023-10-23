@@ -28,29 +28,14 @@ final class HelpCommand extends Command
      * {@inheritdoc}
      */
     public function handle(): void
-    {
-        
-        \Illuminate\Support\Facades\Log::info(PHP_EOL.PHP_EOL.PHP_EOL);
-\Illuminate\Support\Facades\Log::info(
-    '==============================================================='.
-    PHP_EOL.PHP_EOL.PHP_EOL.PHP_EOL
-);
+    {   
+        $commands = $this->getCommandBus()->getCommands();
 
-$this->replyWithMessage([
-    'text' => 'Hey, there! Welcome to our bot!',
-]);
+        $text = '';
+        foreach ($commands as $name => $handler) {
+            $text .= sprintf('/%s - %s'.PHP_EOL, $name, $handler->getDescription());
+        }
 
-
-        // $commands = $this->telegram->getCommandBus()->getCommands();
-
-//         $text = '';
-//         foreach ($commands as $name => $handler) {
-//             $text .= sprintf('/%s - %s'.PHP_EOL, $name, $handler->getDescription());
-//         }
-
-
-// \Illuminate\Support\Facades\Log::info($text);
-
-//         $this->replyWithMessage(['text' => $text]);
+        $this->replyWithMessage(['text' => $text]);
     }
 }

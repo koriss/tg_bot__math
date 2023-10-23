@@ -33,9 +33,14 @@ return [
             // 'certificate_path' => env('TELEGRAM_CERTIFICATE_PATH', 'YOUR-CERTIFICATE-PATH'),
             // 'webhook_url' => env('TELEGRAM_WEBHOOK_URL', 'YOUR-BOT-WEBHOOK-URL'),
             'commands' => [
-                //Acme\Project\Commands\MyTelegramBot\BotCommand::class
                 \App\Services\Chats\Telegram\Commands\HelpCommand::class,
-            
+                \App\Services\Chats\Telegram\Commands\StartCommand::class,
+                // \App\Services\Chats\Telegram\Commands\StartCommand::class,
+                // \App\Services\Chats\Telegram\Commands\StartCommand::class,
+                // \App\Services\Chats\Telegram\Commands\StartCommand::class,
+                // \App\Services\Chats\Telegram\Commands\StartCommand::class,
+                // \App\Services\Chats\Telegram\Commands\StartCommand::class,
+                // \App\Services\Chats\Telegram\Commands\StartCommand::class,
             ],
         ],
 

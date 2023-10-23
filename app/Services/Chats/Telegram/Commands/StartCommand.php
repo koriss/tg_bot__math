@@ -2,6 +2,7 @@
 
 namespace App\Services\Chats\Telegram\Commands;
 
+use App\Models\StudentChat;
 use Telegram\Bot\Commands\Command;
 
 /**
@@ -22,18 +23,25 @@ final class StartCommand extends Command
     /**
      * @var string Command Description
      */
-    protected string $description = 'hello world command';
+    protected string $description = 'Welcome a board command';
 
     /**
      * {@inheritdoc}
      */
     public function handle(): void
     {
+      
+        $model = new StudentChat();
+        $model->start();
         
+        // $this->telegram->
+
         \Illuminate\Support\Facades\Log::info(PHP_EOL.PHP_EOL.PHP_EOL);
 \Illuminate\Support\Facades\Log::info(
     '==============================================================='.
-    PHP_EOL.PHP_EOL.PHP_EOL.PHP_EOL
+    PHP_EOL.PHP_EOL.
+    ''.$model.
+    PHP_EOL.PHP_EOL
 );
 
 $this->replyWithMessage([
