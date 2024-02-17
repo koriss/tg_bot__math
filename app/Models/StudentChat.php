@@ -15,8 +15,7 @@ class StudentChat extends Model
     {
         $result = $this->where('chat_id', $chat_id)->first();
         if($result) {
-            return $result;
-        }
+            return $result;        }
         return $result;
     }
 }
